@@ -9,25 +9,33 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="it.polito.tdp.corsi.CorsiController">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.corsi.CorsiController">
    <top>
-      <Label text="Elenco corsi" BorderPane.alignment="CENTER" />
+      <Label text="Elenco Corsi" BorderPane.alignment="CENTER" />
    </top>
    <center>
       <VBox BorderPane.alignment="CENTER">
          <children>
             <HBox spacing="5.0">
                <children>
-                  <Label text="Semestre" />
-                  <TextField fx:id="txtSemestre" prefColumnCount="5" />
-                  <Button mnemonicParsing="false" onAction="#handleCerca" text="Cerca" />
+                  <Label text="Semestre">
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin></Label>
+                  <TextField fx:id="txtSemestre" prefColumnCount="4" />
+                  <Button mnemonicParsing="false" onAction="#handleCerca" prefWidth="80.0" text="Cerca">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin></Button>
                </children>
                <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
                </VBox.margin>
             </HBox>
-            <TextArea fx:id="txtLog" />
+            <TextArea fx:id="txtLog">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </VBox.margin></TextArea>
          </children>
       </VBox>
    </center>

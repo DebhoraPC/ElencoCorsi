@@ -1,11 +1,22 @@
 package it.polito.tdp.corsi.model;
 
+//java bean: oggetto contenitore
 public class Corso {
 	
+	// campi interessati dalla tabella corso nel database
 	private String codIns ;
 	private int crediti ;
 	private String nome ;
 	private int pd ;
+	
+	public Corso(String codIns, int crediti, String nome, int pd) {
+		super();
+		this.codIns = codIns;
+		this.crediti = crediti;
+		this.nome = nome;
+		this.pd = pd;
+	}
+	
 	public String getCodIns() {
 		return codIns;
 	}
@@ -30,15 +41,7 @@ public class Corso {
 	public void setPd(int pd) {
 		this.pd = pd;
 	}
-	
-	public Corso(String codIns, int crediti, String nome, int pd) {
-		super();
-		this.codIns = codIns;
-		this.crediti = crediti;
-		this.nome = nome;
-		this.pd = pd;
-	}
-	
+		
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -47,6 +50,7 @@ public class Corso {
 		return result;
 	}
 	
+	// DUE OGGETTI CORSI SONO UGUALI SOLO SE HANNO STESSO CODICE INSEGNAMENTO
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -63,13 +67,10 @@ public class Corso {
 			return false;
 		return true;
 	}
+	
 	@Override
 	public String toString() {
-		return "Corso [codIns=" + codIns + ", crediti=" + crediti + ", nome=" + nome + ", pd=" + pd + "]";
+		return "codIns: " + codIns + ", crediti: " + crediti + ", nome: " + nome + ", pd: " + pd;
 	}
 	
-	
-	
-	
-
 }
